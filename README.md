@@ -17,5 +17,5 @@ Hi! I’m a **Computer Science B.S. student at Metropolitan State University of 
 This GitHub contains projects created for learning and growth, including coursework assignments and personal experiments. Over time, I’ll continue improving existing projects and adding new ones as I expand my skills.
 
 ## Contact
-- LinkedIn: *(linkedin.com/in/anthony-hoyev)*
-- Email: *(anthony.hoyev@yahoo.com)*
+- LinkedIn: [linkedin.com/in/anthony-hoyev](linkedin.com/in/anthony-hoyev)
+- Email: [anthony.hoyev@yahoo.com](anthony.hoyev@yahoo.com)
