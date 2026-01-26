@@ -1,1 +1,1 @@
-# assignment-01
+# Internship 2025-2026 assignments.
