@@ -42,7 +42,7 @@ data/                              Local records, created on first save and igno
 3. Select this `SwimTeamManagerWeb` folder, which contains `pom.xml`, and click **Finish**.
 4. Open `src/main/java → SwimTeamManager → SwimteammanagerApplication.java`.
 5. Right-click the class and choose **Run As → Java Application**.
-6. Visit [http://localhost:8080](http://localhost:8080).
+6. Visit [http://localhost:8080/swimteam-web/](http://localhost:8080/swimteam-web/).
 
 The Maven project targets Java 21. No standalone Maven installation is required.
 
@@ -60,9 +60,9 @@ Run automated tests with:
 
 ## Website
 
-A public demo has not been deployed yet. The local application is available at
-[http://localhost:8080](http://localhost:8080) after starting it. Visitors to this
-repository cannot access someone else's running application through that address.
+[Launch the live demo](https://swimteam-web.onrender.com/swimteam-web/). No download is required.
+
+Hosted on Render's free plan for internship portfolio demonstrations. The service may take about a minute to wake after inactivity. Visitors share one roster: use fictional data only. Online data can reset after a restart or deployment. The demo starts with sample swimmers when no saved roster is available. Local file persistence still works when running on your own computer.
 
 ## Saved data
 

@@ -12,7 +12,7 @@ Local team data is excluded from the repository and Docker image.
 - Root directory: `SwimTeamManagerWeb`
 - Runtime: Docker
 - Dockerfile path: `./Dockerfile`
-- Health check path: `/`
+- Health check path: `/swimteam-web/`
 
 Render supplies `PORT`; the app uses that port in hosting and 8080 locally.
 The Docker build runs the tests and packages the existing Java 21 application.

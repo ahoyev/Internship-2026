@@ -31,9 +31,9 @@ console application using controllers, services, Thymeleaf templates, and automa
 
 [View the project and setup instructions](SwimTeamManagerWeb/README.md).
 
-**Website:** A public demo is not deployed yet. After starting the application locally,
-open [http://localhost:8080](http://localhost:8080). This address works only on the
-computer running the application.
+**Live demo:** [Open SwimTeamManager](https://swimteam-web.onrender.com/swimteam-web/).
+
+This free portfolio demo uses fictional, shared records. The first visit after inactivity may take about a minute, and demo data can reset when the host restarts.
 
 ## Contact
 - LinkedIn: [linkedin.com/in/anthony-hoyev](linkedin.com/in/anthony-hoyev)
