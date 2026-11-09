@@ -12,7 +12,7 @@ Local team data is excluded from the repository and Docker image.
 - Root directory: `SwimTeamManagerWeb`
 - Runtime: Docker
 - Dockerfile path: `./Dockerfile`
-- Health check path: `/swimteam-web/`
+- Health check path: `/`
 
 Render supplies `PORT`; the app uses that port in hosting and 8080 locally.
 The Docker build runs the tests and packages the existing Java 21 application.
@@ -34,3 +34,6 @@ Wait for Render to report the service live, then open its assigned HTTPS URL.
 Check the dashboard, add a sample swimmer, mark attendance, edit the swimmer, and
 confirm removal. For persistent hosting, verify records survive a service restart.
 Update both repository READMEs with the verified public URL.
+
+Public demo: https://swimteam.onrender.com/
+Set SERVER_SERVLET_CONTEXT_PATH=/ for this public service to remove the local path prefix.

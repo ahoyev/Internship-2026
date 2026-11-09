@@ -60,7 +60,7 @@ Run automated tests with:
 
 ## Website
 
-[Launch the live demo](https://swimteam-web.onrender.com/swimteam-web/). No download is required.
+[Launch the live demo](https://swimteam.onrender.com/). No download is required.
 
 Hosted on Render's free plan for internship portfolio demonstrations. The service may take about a minute to wake after inactivity. Visitors share one roster: use fictional data only. Online data can reset after a restart or deployment. The demo starts with sample swimmers when no saved roster is available. Local file persistence still works when running on your own computer.
 

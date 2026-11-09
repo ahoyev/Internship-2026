@@ -31,7 +31,7 @@ console application using controllers, services, Thymeleaf templates, and automa
 
 [View the project and setup instructions](SwimTeamManagerWeb/README.md).
 
-**Live demo:** [Open SwimTeamManager](https://swimteam-web.onrender.com/swimteam-web/).
+**Live demo:** [Open SwimTeamManager](https://swimteam.onrender.com/).
 
 This free portfolio demo uses fictional, shared records. The first visit after inactivity may take about a minute, and demo data can reset when the host restarts.
 

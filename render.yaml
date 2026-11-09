@@ -1,12 +1,14 @@
 services:
   - type: web
-    name: swimteam-web
+    name: swimteam
     runtime: docker
     plan: free
     rootDir: SwimTeamManagerWeb
     dockerfilePath: ./Dockerfile
-    healthCheckPath: /swimteam-web/
+    healthCheckPath: /
     envVars:
+      - key: SERVER_SERVLET_CONTEXT_PATH
+        value: /
       - key: SPRING_PROFILES_ACTIVE
         value: demo
       - key: SWIMTEAM_DATA_FILE
