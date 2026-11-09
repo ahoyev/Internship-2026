@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Swimmer | SwimTeamManager</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header><h1>SwimTeamManager</h1><p>Edit Swimmer</p></header>
+    <main class="container form-container">
+        <section class="section">
+            <h2 th:text="|Edit ${swimmer.name}|">Edit Swimmer</h2>
+            <p>Update age and swim group. Attendance stays attached to this swimmer.</p>
+            <p role="alert" class="form-error" th:if="${error}" th:text="${error}"></p>
+            <form method="post" th:action="@{/swimmers/{id}/edit(id=${swimmer.id})}">
+                <div class="form-field">
+                    <label for="age">Age (1–120)</label>
+                    <input id="age" name="age" type="number" min="1" max="120" step="1" th:value="${age}" required>
+                </div>
+                <div class="form-field">
+                    <label for="group">Swim group</label>
+                    <input id="group" name="group" type="text" th:value="${group}" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Save Changes</button>
+                    <a href="/swimmers">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

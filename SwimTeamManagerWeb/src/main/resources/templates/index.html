@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwimTeamManager</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>SwimTeamManager</h1>
+        <p>Swim Team Management Dashboard</p>
+    </header>
+
+    <main class="container">
+        <div class="welcome">
+            <h2>Welcome to your dashboard!</h2>
+            <p>Manage your swimmers and team attendance.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Swimmers</h3>
+                <a class="number count-link" href="/swimmers" aria-label="View all swimmers" th:text="${swimmers.size()}">0</a>
+            </div>
+
+            <div class="card">
+                <h3>Present Today</h3>
+                <a class="number count-link" href="/attendance" aria-label="View and mark attendance" th:text="${presentToday}">0</a>
+                <a class="card-link" href="/attendance">View / Mark Attendance</a>
+            </div>
+
+            <div class="card">
+                <h3>Swim Groups</h3>
+                <div class="number" th:text="${groupCount}">0</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Swimmer Management</h2>
+            <p>Swimmers and groups are saved automatically to your team data file.</p>
+            <nav class="form-actions" aria-label="Swimmer management">
+                <a class="button" href="/swimmers/new">Add Swimmer</a>
+                <a class="button" href="/swimmers/search">Search Swimmers</a>
+                <a class="button" href="/swimmers/edit">Edit Swimmers</a>
+                <a class="button" href="/swimmers/remove">Remove Swimmers</a>
+            </nav>
+            <p class="swimmer-list" th:if="${swimmers.isEmpty()}">No swimmers yet. Add your first swimmer to get started.</p>
+            <div class="swimmer-list table-scroll" th:unless="${swimmers.isEmpty()}">
+                <table>
+                    <caption>Team swimmers</caption>
+                    <thead>
+                        <tr><th scope="col">Name</th><th scope="col">Age</th><th scope="col">Swim group</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="swimmer : ${swimmers}">
+                            <td th:text="${swimmer.name}"></td>
+                            <td th:text="${swimmer.age}"></td>
+                            <td th:text="${swimmer.group}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
