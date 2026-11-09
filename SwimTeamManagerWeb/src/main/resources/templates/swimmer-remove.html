@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remove Swimmer | SwimTeamManager</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header><h1>SwimTeamManager</h1><p>Remove Swimmer</p></header>
@@ -16,7 +16,7 @@
             <p>This also removes all attendance records for this swimmer. This cannot be undone.</p>
             <form method="post" th:action="@{/swimmers/{id}/remove(id=${swimmer.id})}" class="form-actions">
                 <button type="submit">Remove Swimmer</button>
-                <a href="/swimmers">Cancel</a>
+                <a th:href="@{/swimmers}">Cancel</a>
             </form>
         </section>
     </main>

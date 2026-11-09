@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Swimmer | SwimTeamManager</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header><h1>SwimTeamManager</h1><p>Edit Swimmer</p></header>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-actions">
                     <button type="submit">Save Changes</button>
-                    <a href="/swimmers">Cancel</a>
+                    <a th:href="@{/swimmers}">Cancel</a>
                 </div>
             </form>
         </section>

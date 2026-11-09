@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance | SwimTeamManager</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header><h1>SwimTeamManager</h1><p>Team Attendance</p></header>
@@ -12,10 +12,10 @@
         <section class="section">
             <h2>Attendance</h2>
             <nav class="form-actions" aria-label="Page navigation">
-                <a href="/">Back to Dashboard</a><a href="/swimmers">View Swimmers</a>
+                <a th:href="@{/}">Back to Dashboard</a><a th:href="@{/swimmers}">View Swimmers</a>
             </nav>
             <p>Choose a date, then mark each swimmer. You can change a mark at any time. Attendance is saved automatically and kept after restarting.</p>
-            <form action="/attendance" method="get" class="form-actions">
+            <form th:action="@{/attendance}" method="get" class="form-actions">
                 <div class="form-field">
                     <label for="date">Attendance date</label>
                     <input id="date" name="date" type="date" th:value="${date}" required>
@@ -26,7 +26,7 @@
             <p th:text="|Present: ${presentCount} · Absent: ${absentCount} · Not marked: ${swimmers.size() - records.size()}|"></p>
             <p role="status" th:if="${message}" th:text="${message}"></p>
             <p class="form-error" role="alert" th:if="${error}" th:text="${error}"></p>
-            <p th:if="${swimmers.isEmpty()}">No swimmers yet. <a href="/swimmers/new">Add a swimmer</a> before marking attendance.</p>
+            <p th:if="${swimmers.isEmpty()}">No swimmers yet. <a th:href="@{/swimmers/new}">Add a swimmer</a> before marking attendance.</p>
             <div class="table-scroll" th:unless="${swimmers.isEmpty()}">
                 <table>
                     <caption>Daily attendance</caption>
@@ -36,7 +36,7 @@
                         <td th:text="${swimmer.group}"></td>
                         <td th:text="${records.containsKey(swimmer.id) ? (records.get(swimmer.id).name() == 'PRESENT' ? 'Present' : 'Absent') : 'Not marked'}"></td>
                         <td>
-                            <form action="/attendance" method="post" class="form-actions">
+                            <form th:action="@{/attendance}" method="post" class="form-actions">
                                 <input type="hidden" name="date" th:value="${date}">
                                 <input type="hidden" name="swimmerId" th:value="${swimmer.id}">
                                 <button type="submit" name="status" value="PRESENT" th:aria-label="|Mark ${swimmer.name} present|">Present</button>

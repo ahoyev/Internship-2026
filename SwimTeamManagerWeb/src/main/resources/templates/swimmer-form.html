@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Swimmer | SwimTeamManager</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@
             <p id="form-note">Enter swimmer details below. Swimmers and groups are saved automatically to your team data file.</p>
             <p class="form-error" role="alert" th:if="${error}" th:text="${error}"></p>
 
-            <form action="/swimmers" method="post" aria-describedby="form-note">
+            <form th:action="@{/swimmers}" method="post" aria-describedby="form-note">
                 <div class="form-field">
                     <label for="name">Swimmer name</label>
                     <input type="text" id="name" name="name" th:value="${name}" autocomplete="name" required>
@@ -36,7 +36,7 @@
 
                 <div class="form-actions">
                     <button type="submit">Save Swimmer</button>
-                    <a href="/">Back to Dashboard</a>
+                    <a th:href="@{/}">Back to Dashboard</a>
                 </div>
             </form>
         </section>

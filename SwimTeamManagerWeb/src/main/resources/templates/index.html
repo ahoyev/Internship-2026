@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwimTeamManager</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header>
@@ -13,6 +13,7 @@
     </header>
 
     <main class="container">
+        <p th:if="${@environment.getProperty('spring.profiles.active', '') == 'demo'}" role="note">Public portfolio demo — use fictional data only. Visitors share this roster, and demo data may reset when the free host restarts.</p>
         <div class="welcome">
             <h2>Welcome to your dashboard!</h2>
             <p>Manage your swimmers and team attendance.</p>
@@ -21,13 +22,13 @@
         <div class="cards">
             <div class="card">
                 <h3>Total Swimmers</h3>
-                <a class="number count-link" href="/swimmers" aria-label="View all swimmers" th:text="${swimmers.size()}">0</a>
+                <a class="number count-link" th:href="@{/swimmers}" aria-label="View all swimmers" th:text="${swimmers.size()}">0</a>
             </div>
 
             <div class="card">
                 <h3>Present Today</h3>
-                <a class="number count-link" href="/attendance" aria-label="View and mark attendance" th:text="${presentToday}">0</a>
-                <a class="card-link" href="/attendance">View / Mark Attendance</a>
+                <a class="number count-link" th:href="@{/attendance}" aria-label="View and mark attendance" th:text="${presentToday}">0</a>
+                <a class="card-link" th:href="@{/attendance}">View / Mark Attendance</a>
             </div>
 
             <div class="card">
@@ -40,10 +41,10 @@
             <h2>Swimmer Management</h2>
             <p>Swimmers and groups are saved automatically to your team data file.</p>
             <nav class="form-actions" aria-label="Swimmer management">
-                <a class="button" href="/swimmers/new">Add Swimmer</a>
-                <a class="button" href="/swimmers/search">Search Swimmers</a>
-                <a class="button" href="/swimmers/edit">Edit Swimmers</a>
-                <a class="button" href="/swimmers/remove">Remove Swimmers</a>
+                <a class="button" th:href="@{/swimmers/new}">Add Swimmer</a>
+                <a class="button" th:href="@{/swimmers/search}">Search Swimmers</a>
+                <a class="button" th:href="@{/swimmers/edit}">Edit Swimmers</a>
+                <a class="button" th:href="@{/swimmers/remove}">Remove Swimmers</a>
             </nav>
             <p class="swimmer-list" th:if="${swimmers.isEmpty()}">No swimmers yet. Add your first swimmer to get started.</p>
             <div class="swimmer-list table-scroll" th:unless="${swimmers.isEmpty()}">
